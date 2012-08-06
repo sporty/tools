@@ -57,23 +57,25 @@ class Downloader(object):
             raise Exception(u"ヘッダからファイル名が見つかりませんでした")
 
         # ファイルに保存
-        with open(filename, "w") as fp:
-            #fp.write(r.text.encode("utf-8"))
+        output_file = os.path.abspath(os.path.join(self._output_directory, filename))
+        with open(output_file, "w") as fp:
             fp.write(r.content)
 
         # ファイル名を保存
-        self._filename = filename
+        self._filename = output_file
 
     def get_filename(self):
         """
         """
         return self._filename
 
-    def __init__(self, base_url, ssl_verify=False):
+    def __init__(self, base_url, output_directory="./", ssl_verify=False):
         """
         """
         # ベースURL
         self._base_url = base_url
+        # 保存ディレクトリ
+        self._output_directory = output_directory
         # ssl認証
         self._ssl_verify = ssl_verify
 
