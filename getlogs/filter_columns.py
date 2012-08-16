@@ -27,7 +27,7 @@ if __name__ == "__main__":
             )
     parser.add_argument(
             '-l', '--list', dest='safe_list', type=argparse.FileType("rb"),
-            default=file("safe_labels.json"),
+            default=file("config/safe_labels.json"),
             help=u'許可リストJSONファイル名。（正規表現文字列のリスト）'
             )
     parser.add_argument(

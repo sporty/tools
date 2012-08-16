@@ -29,7 +29,7 @@ if __name__ == "__main__":
     '''
     parser.add_argument(
             '-l', '--list', dest='safe_list', type=argparse.FileType("rb"),
-            default=file("sum_span.json"),
+            default=file("config/sum_span.json"),
             help=u'計算範囲'
             )
     parser.add_argument(

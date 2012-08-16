@@ -27,7 +27,7 @@ if __name__ == "__main__":
             )
     parser.add_argument(
             '-l', '--list', dest='safe_list', type=argparse.FileType("rb"),
-            default=file("safe_rows_normal.json"),
+            default=file("config/safe_rows_normal.json"),
             help=u'許可リストJSONファイル名。（columnインデックスを添字とする正規表現文字列の辞書）'
             )
     parser.add_argument(
