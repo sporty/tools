@@ -1,17 +1,43 @@
 
 
-* ダウンロード
+* 使い方
 
-getlogs.py
+標準入力から読み込み、標準出力に出すので、パイプで繋げて使いましょう
 
-* 導線／合計数
+```
+cat hello.csv | filter_columns.py > result.csv
+```
 
-cat 20120730152805_payment_track_result/summary.csv | ./tsv2csv.py | ./filter_columns.py | ./filter_rows.py -l safe_rows_normal.json | ./sum.py
-cat 20120730152805_payment_track_result/summary.csv | ./tsv2csv.py | ./filter_columns.py | ./filter_rows.py -l safe_rows_premium.json | ./sum.py
+
+* tsvをcsvに変換
+
+```
+tsv2csv.py 
+```
+
+* 指定した列だけにフィルタリング
+
+```
+filter_columns.py 
+```
+
+* 指定した行だけにフィルタリング
+
+```
+filter_rows.py
+```
+
+* 指定した範囲を合計する
+
+```
+sum.py
+```
 
 * 行列変換
 
-cat 20120802_userhistory_ja.csv | ./swap_rowcolumn.py 
+```
+swap_rowcolumn.py 
+```
 
 
 以上
