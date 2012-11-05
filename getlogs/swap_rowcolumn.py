@@ -45,7 +45,7 @@ if __name__ == "__main__":
     for current_column in range(max_column):
         tmp = []
         for row in row_array:
-            if current_column > len(row):
+            if current_column >= len(row):
                 tmp.append("")
             else:
                 tmp.append(row[current_column])
