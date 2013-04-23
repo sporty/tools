@@ -22,12 +22,17 @@ if "%target_b:~-3%"=="..." (
 )
 
 rem 実行
-echo %target_a%と%target_b%の差分をサブディレクトリごととり、エディタで表示します
+echo 以下の差分をサブディレクトリごととり、エディタで表示します
+echo ----------
+echo %target_a%
+echo %target_b%
+echo ----------
 
 %diff_program% -r %target_a% %target_b% > %filename%
+if %ERRORLEVEL%==2 goto error
 %editor_program% %filename%
-
 if not %ERRORLEVEL%==0 goto error
+
 goto end
 
 :error
